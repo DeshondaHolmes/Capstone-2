@@ -1,24 +1,93 @@
 <!doctype html>
 <html lang="en">
 
+<!--css style start linking-->
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Enjoy the outdoors - National Parks</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-    <link href="css/styles.css" rel="stylehsheet">
+    <link href="css/styles.css" rel="stylesheet">
 </head>
+<!--css style end linking-->
 
-<body>
-    <h1>Homepage</h1>
+<body class="container-flex">
+    <header>
+        <nav class="navbar navbar-expand-lg bg-warning" data-bs-theme="warning">
+            <div class="container">
+                <a class="navbar-brand" href="index.html "></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="national-parks.html">National Parks</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="mountain-info.html">Mountains</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+    </header>
+
+    <main>
+        <form class="container border">
+            <fieldset class="row">
+                <legend>Search National Parks</legend>
+                <div class="col-4 mt-">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="radioChoice" id="locationRadioBtn" checked>
+                        <label class="form-check-label" for="locationRadioBtn">
+                            Location
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="radioChoice" id="parkTypeRadioBtn">
+                        <label class="form-check-label" for="parkTypeRadioBtn">
+                            Park Type
+                        </label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-4 mt-4">
+                        <section id="locationSelect">
+                            <h2>Choose your state/territory</h2>
+                            <select class="form-select" aria-label="select state or territory">
+                                <option selected>Select one</option>
+                                <option value="">.....</option>
+                            </select>
+                        </section>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+
+
+        <div class="row">
+        </div>
+
+    </main>
+    <footer>
+
+    </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
         crossorigin="anonymous"></script>
-    <scripts src="scripts/locationData.js"></scripts>
-    <scripts src="scripts/parkTypeData.js"></scripts>
-    <scripts src="scripts/nationalParkData.js"></scripts>
-    <script src="scripts/national-park.js"></script>
+        
+    <script src="scripts/locationData.js"></script>
+    <script src="scripts/parkTypeData.js"></script>
+    <script src="scripts/nationalParkData.js"></script>
+    <script src="scripts/national-parks.js"></script>
 </body>
 
 </html>
