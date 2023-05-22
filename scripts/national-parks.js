@@ -1,23 +1,42 @@
 "use strict";
 
-const locationRadioBtn = document.getElementById("locationRadioBtn");
+const locationDropDown = document.getElementById("locationDropDown");
 
-const parkTypeRadioBtn = document.getElementById("parkTypeRadioBtn");
-
-const locationSelect = document.getElementById("locationSelect");
-
-
-window.onload = function () {
-    locationRadioBtn.onclick = showLocations
-    console.log("radio click");
+//arrow function
+window.onload = () => {
+    console.log("window load");
+    //dropdown
+    locationDropDown.onclick = showLocations();
+    locationDropDown.onChange = rotateStates;
 };
 
-function showLocations() {
-   let stateOrTerritory = locationsArray.length;
-    if (locationRadioBtn.checked) {
-        console.log("show");
-        locationSelect.style.display = showLocations;
-    }
 
+//
+function showLocations() {
+    for (let location of locationsArray ){
+        let newOption = new Option (location);
+        locationDropDown.appendChild(newOption);
+    }    
+};
+
+let selectedValue = nationalParksArray.value;
+
+function rotateStates (){
+
+
+    for (let state of  nationalParksArray){
+        state == nationalParksArray.state;
+
+
+    }
 }
+
+
+
+
+   
+
+
+
+
 

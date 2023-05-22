@@ -41,37 +41,24 @@
     </header>
 
     <main>
+        <!--search by location chosse state or territory-->
         <form class="container border">
+        
             <fieldset class="row">
                 <legend>Search National Parks</legend>
-                <div class="col-4 mt-">
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="radioChoice" id="locationRadioBtn" checked>
-                        <label class="form-check-label" for="locationRadioBtn">
-                            Location
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="radioChoice" id="parkTypeRadioBtn">
-                        <label class="form-check-label" for="parkTypeRadioBtn">
-                            Park Type
-                        </label>
-                    </div>
-                </div>
                 <div class="row">
-                    <div class="col-4 mt-4">
+                    <div class="col-5 mt-4">
                         <section id="locationSelect">
                             <h2>Choose your state/territory</h2>
-                            <select class="form-select" aria-label="select state or territory">
+                            <select class="form-select" id ="locationDropDown" aria-label="select">
                                 <option selected>Select one</option>
-                                <option value="">.....</option>
                             </select>
                         </section>
                     </div>
                 </div>
             </fieldset>
         </form>
-
+        <!--End search by location-->
 
         <div class="row">
         </div>
