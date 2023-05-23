@@ -1,7 +1,6 @@
 <!doctype html>
 <html lang="en">
-
-<!--css style start linking-->
+<!--css style start & Bootstrap linking-->
 
 <head>
     <meta charset="utf-8">
@@ -11,10 +10,14 @@
         integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <link href="css/styles.css" rel="stylesheet">
 </head>
-<!--css style end linking-->
+<!--css style end & Bootstrap linking-->
+
+
 
 <body class="container-flex">
+
     <header>
+        <!--start navigation-->
         <nav class="navbar navbar-expand-lg bg-warning" data-bs-theme="warning">
             <div class="container">
                 <a class="navbar-brand" href="index.html "></a>
@@ -37,31 +40,67 @@
                 </div>
             </div>
         </nav>
+        <!--start navigation-->
 
     </header>
 
+
+
     <main>
-        <!--search by location chosse state or territory-->
-        <form class="container border">
-        
-            <fieldset class="row">
-                <legend>Search National Parks</legend>
-                <div class="row">
-                    <div class="col-5 mt-4">
-                        <section id="locationSelect">
-                            <h2>Choose your state/territory</h2>
-                            <select class="form-select" id ="locationDropDown" aria-label="select">
+        <legend class="text-center">Search National Parks</legend>
+        <div class="container border">
+            <!--Search by  location select state/territory START-->
+
+            <div class="row ">
+
+                <div class="col-6 mt-4 ">
+
+
+                    <div id="locationSelect">
+                        <h2>Find by location:</h2>
+                        <select class="form-select" id="locationDropDown" aria-label="select">
+                            <option selected>Select one</option>
+                        </select>
+
+                    </div>
+
+                  
+
+                     <!--<div class="mb-5"id="parkTypeSelect">
+                            <h2>Find by park type:</h2>
+                            <select class="form-select" id="parkTypeDropDown" aria-label="select">
                                 <option selected>Select one</option>
                             </select>
-                        </section>
+                        </div>--> 
+
+                </div>
+
+
+            </div>
+
+            <!--Search by  location select state/territory END -->
+
+            <div id="parkDetailRow" class="row">
+                <div class="col">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 id="parkName" class="card-title">Black Canyon of the Gunnison National Park</h5>
+                            <ul id="parkDetails">
+                                <li>Id:<span id="parkId">blca</span></li>
+                                <li>City:<span id="parkCity">Gunnison</span></li>
+                                <li>State:<span id="parkState">Colorado</span></li>
+                                <li>Zip code:<span id="parkZipCode">81230 </span></li>
+                                <li>Fax:<span id="parkFax">(970) 641-3127</span></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-            </fieldset>
-        </form>
-        <!--End search by location-->
-
-        <div class="row">
+            </div>
+        
         </div>
+        </div>
+
+
 
     </main>
     <footer>
@@ -70,7 +109,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
         crossorigin="anonymous"></script>
-        
+
     <script src="scripts/locationData.js"></script>
     <script src="scripts/parkTypeData.js"></script>
     <script src="scripts/nationalParkData.js"></script>
