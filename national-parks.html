@@ -14,7 +14,7 @@
 
 
 
-<body class="container-flex">
+<body>
 
     <header>
         <!--start navigation-->
@@ -46,60 +46,65 @@
 
 
 
-    <main>
+    <main class="container-fluid border">
         <legend class="text-center">Search National Parks</legend>
-        <div class="container border">
-            <!--Search by  location select state/territory START-->
 
-            <div class="row ">
+        <!--Search by  location select state/territory START-->
+        <div class="row  ">
 
-                <div class="col-6 mt-4 ">
+            <div class="col-4 mt-4 ">
 
 
-                    <div id="locationSelect">
-                        <h2>Find by location:</h2>
-                        <select class="form-select" id="locationDropDown" aria-label="select">
-                            <option selected>Select one</option>
-                        </select>
-
-                    </div>
-
-                  
-
-                     <!--<div class="mb-5"id="parkTypeSelect">
-                            <h2>Find by park type:</h2>
-                            <select class="form-select" id="parkTypeDropDown" aria-label="select">
-                                <option selected>Select one</option>
-                            </select>
-                        </div>--> 
+                <div id="locationSelect">
+                    <h2>Find by location:</h2>
+                    <select class="form-select" id="locationDropDown" aria-label="select">
+                        <option value="">Select one</option>
+                    </select>
 
                 </div>
 
+           
+            </div>
+
+
+        </div>
+
+        <div class="row ">
+
+            <div class="col-4 mt-4 ">
+
+
+                <div class="mb-5" id="parkTypeSelect">
+                    <h2>Find by park type:</h2>
+                    <select class="form-select" id="parkTypeDropDown" aria-label="select">
+                        <option value="">Select one</option>
+                    </select>
+                </div>
 
             </div>
 
-            <!--Search by  location select state/territory END -->
 
-            <div id="parkDetailRow" class="row">
-                <div class="col">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 id="parkName" class="card-title">Black Canyon of the Gunnison National Park</h5>
-                            <ul id="parkDetails">
-                                <li>Id:<span id="parkId">blca</span></li>
-                                <li>City:<span id="parkCity">Gunnison</span></li>
-                                <li>State:<span id="parkState">Colorado</span></li>
-                                <li>Zip code:<span id="parkZipCode">81230 </span></li>
-                                <li>Fax:<span id="parkFax">(970) 641-3127</span></li>
-                            </ul>
-                        </div>
-                    </div>
+        </div>
+        <!--Search by  location select state/territory END -->
+
+        <div id="parkDetailRow" class="row">
+            <div class="col">
+                <div class="card">
+                    <!-- class="card-body" 
+                            <h5 class="card-title"></h5>
+                            <ul class="card-list">
+                                <li id="parkId"></span></li>
+                                <li>City:<span id="parkCity"></span></li>
+                                <li>Zip code:<span id="parkZipCode"></span></li>
+                                <li>Address:<span id="parkAddress"></span></li>
+                            </ul> 
+                     </div>-->
                 </div>
             </div>
-        
-        </div>
         </div>
 
+        </div>
+        </div>
 
 
     </main>
