@@ -10,7 +10,7 @@ const parkTypeDropDown = document.getElementById("parkTypeDropDown");
 
 //radio button option location
 const locationOption = document.getElementById("locationOption");
-
+//
 //radio button option location
 const parkTypeOption = document.getElementById("parkTypeOption");
 
@@ -20,9 +20,10 @@ const parkTypeSelect = document.getElementById("parkTypeSelect");
 
 const locationSelect = document.getElementById("locationSelect");
 
+const dropDownSelects = document.getElementById("dropDownSelects");
 
 //define parkdetails row element id in national park html
-//const parkDetailRow = document.getElementById("parkDetailRow");
+const parkDetailRow = document.getElementById("parkDetailRow");
 
 //define park name element id in national park html
 //const parkName = document.getElementById("parkName");
@@ -49,11 +50,13 @@ const locationSelect = document.getElementById("locationSelect");
 //Arrow function
 window.onload = () => {
 
+    
+ 
     //when window finish loading "window load" in console window
     console.log("window load");
 
     locationOption.onchange = onLocationOptionChange;
-    parkTypeOption.onchange = showParkType;
+    parkTypeOption.onchange = onParkTypeOptionChange;
 
 
 
@@ -68,6 +71,8 @@ window.onload = () => {
         let newOption = new Option(state);
 
         locationDropDown.appendChild(newOption);
+
+     
     }
 
     for (let type of parkTypesArray) {
@@ -77,42 +82,36 @@ window.onload = () => {
         parkTypeDropDown.appendChild(newOption);
     }
 
-
+    
 };
 
 
-function onLocationOptionChange() {
 
+function onLocationOptionChange() {
     if (locationOption.checked) {
 
         //show location  related stuff
         console.log("Hello");
         locationSelect.style.display = "block";
-
-        parkTypeSelect.innerHTML = "";
-    }
-    else {
+        parkTypeSelect.style.display = "none";
+    } else {
         //hide location related stuff.
-        locationSelect.style.display = "none";
+        locationSelect.style.display = "block";
     }
-
-
 }
 
 
-function showParkType() {
+function onParkTypeOptionChange() {
 
     console.log("parkType");
-
-
     if (parkTypeOption.checked) {
+        parkTypeSelect.style.display = "block";
+        locationSelect.style.display = "none"
+
+    } else {
         parkTypeSelect.style.display = "none";
-       
     }
-    else {
-        locationSelect.style.display = "block";
-    }
-    
+
 }
 
 
@@ -127,26 +126,24 @@ function locationDropDownChange() {
 
     //parks filter is defined as national parks array. Condition park variable body follows 
     // variable park get state  equal to user selected state
-    const parksFilter = nationalParksArray.filter(park => park.State == selectedState);
+    const parksFilter = nationalParksArray.filter(park => park.State === selectedState);
 
     console.log(parksFilter);
 
     //console shows filtered states
     //console.log(parksFilter);
 
+
+    parkDetailRow.innerHTML = "";
+
     //A park must be selected 
     if (parksFilter.length > 0) {
 
-
-
-        parkDetailRow.innerHTML = "";
-
         for (let park of parksFilter) {
-            createNationalParkcard(park);
+            createNationalParkCard(park);
         }
 
         /*const park = parksFilter[0];
-        
         parkName.innerHTML = park.LocationName;
         parkId.innerHTML = park.LocationID;
         parkCity.innerHTML = park.City;
@@ -159,40 +156,37 @@ function locationDropDownChange() {
 function parkTypeDropDownChange() {
     //selected type is defined as user selected value
     let selectedType = parkTypeDropDown.value;
-    parkDetailRow.innerHTML = "";
+    const parksType = nationalParksArray.filter(park => park.LocationName.includes(selectedType));
+    console.log(parksType);
 
+    
     //show selected state in console
     
+    parkDetailRow.innerHTML = "";
+
+    if(parksType.length>0){
+        for(let park of parksType){
+            createNationalParkCard(park)
+        }
+
+    }
 
     //parks filter is defined as national parks array. Condition park variable body follows 
     // variable park get state  equal to user selected state
-    const parksType = nationalParksArray.filter(park => park.LocationName.includes(selectedType));
 
-    console.log(parksType);
 }
-//includes  
-
-//console shows filtered states
-
-//A park must be selected 
-/* if (parksType.length > 0) {
-   
-
-  
-     
- /*const park = parksFilter[0];
-     
-     parkName.innerHTML = park.LocationName;
-     parkId.innerHTML = park.LocationID;
-     parkCity.innerHTML = park.City;
-     parkState.innerHTML = park.State;
-     parkFax.innerHTML = park.Fax;*/
 
 
 
+/*if (parksType.length > 0) {    
+const park = parksFilter[0];
+parkName.innerHTML = park.LocationName;
+parkId.innerHTML = park.LocationID;
+parkCity.innerHTML = park.City;
+parkState.innerHTML = park.State;
+parkFax.innerHTML = park.Fax;}*/
 
-
-function createNationalParkcard(park) {
+function createNationalParkCard(park) {
 
     /*let divClass = document.createElement("div");
     divClass.className = "row";
@@ -203,7 +197,7 @@ function createNationalParkcard(park) {
     let divCol = document.createElement("div");
 
     //
-    divCol.className = "col-6 p-4 ";
+    divCol.className = "col-6 px-5 ";
     //
     parkDetailRow.appendChild(divCol);
 
@@ -322,7 +316,7 @@ function createNationalParkcard(park) {
     //
     listLongitude.className = "parkLongitude";
     //
-    listLatitude.innerHTML = "Longitude: " + park.Longitude;
+    listLongitude.innerHTML = "Longitude: " + park.Longitude;
     //
     listLatitude.appendChild(listLongitude);
 
@@ -348,15 +342,26 @@ function createNationalParkcard(park) {
     //
     listVisit.appendChild(listLocation);
 
-    /* let listName = document.createElement("li");
-     listName.classList = "parkId";
-     unOrderedList.innerHTML = park.LocationID;
-     unOrderedList.appendChild(listName);*/
+
+
+
+
+
+
+    let listState = document.createElement("li");
+    //
+    listState.className = "parkState";
+    //
+    listState.innerHTML = "State: " + park.State;
+
+    //
+    listLocation.appendChild(listState);
+ 
 
 }
 
 
-//each card in column
+/*each card in column
 
 /*let statesArray = [];
 
@@ -368,9 +373,9 @@ let states = nationalParksArray.filter(currentState => currentState.State === "M
 /*let state = nationalParksArray.filter(n =>n.State = "")
 
 for (let i = 0 ; i <state.length;i++){
-    console.log(state[i]);
+console.log(state[i]);
     
-}*/
+}
 
 
 
@@ -379,15 +384,15 @@ for (let i = 0 ; i <state.length;i++){
 
 
 /*function getStatesInDropDown (nationalParksArray){
-    if (nationalParksArray.state == "Maine") {
-        return true;
-    }
-    else {
-        return false;
-    }
-}*/
+if (nationalParksArray.state == "Maine") {
+return true;
+}
+else {
+return false;
+}
+}
 
-/*
+
 function showLocations() {
    
 };
@@ -395,11 +400,11 @@ function showLocations() {
 
 
 function isState (){
-    for (let state of  nationalParksArray){
-        let state = nationalParksArray.state;
+for (let state of  nationalParksArray){
+let state = nationalParksArray.state;
 
 
-    }
+}
 }*/
 
 
