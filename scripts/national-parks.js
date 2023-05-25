@@ -49,9 +49,9 @@ const parkDetailRow = document.getElementById("parkDetailRow");
 
 //Arrow function
 window.onload = () => {
+  
 
-    onLocationOptionChange();
-   
+    
     //when window finish loading "window load" in console window
     console.log("window load");
 

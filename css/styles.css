@@ -74,4 +74,12 @@ body {
 
 #parkDetailRow{
     background-image: url("images/Garfield-StoryImage.jpg");
+
+}
+
+
+
+
+#parkTypeSelect{
+    display:none;
 }
