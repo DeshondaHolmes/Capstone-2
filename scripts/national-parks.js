@@ -50,8 +50,8 @@ const parkDetailRow = document.getElementById("parkDetailRow");
 //Arrow function
 window.onload = () => {
 
-    
- 
+    onLocationOptionChange();
+   
     //when window finish loading "window load" in console window
     console.log("window load");
 
@@ -62,6 +62,7 @@ window.onload = () => {
 
     //when dropdown selected display states/territory
     locationDropDown.onchange = locationDropDownChange;
+    console.log(locationDropDown);
     parkTypeDropDown.onchange = parkTypeDropDownChange;
 
 
@@ -71,9 +72,11 @@ window.onload = () => {
         let newOption = new Option(state);
 
         locationDropDown.appendChild(newOption);
-
+        console.log(state);
      
     }
+
+
 
     for (let type of parkTypesArray) {
 
@@ -85,18 +88,22 @@ window.onload = () => {
     
 };
 
-
-
 function onLocationOptionChange() {
     if (locationOption.checked) {
 
+      
         //show location  related stuff
         console.log("Hello");
         locationSelect.style.display = "block";
+        
         parkTypeSelect.style.display = "none";
+        parkDetailRow.innerHTML = "";
+        locationDropDown.selectedIndex = 0;
+      
     } else {
         //hide location related stuff.
-        locationSelect.style.display = "block";
+      
+        locationSelect.style.display = "none";
     }
 }
 
@@ -105,11 +112,15 @@ function onParkTypeOptionChange() {
 
     console.log("parkType");
     if (parkTypeOption.checked) {
+        
         parkTypeSelect.style.display = "block";
+
         locationSelect.style.display = "none"
+        parkDetailRow.innerHTML = "";
+        parkTypeDropDown.selectedIndex = 0;
 
     } else {
-        parkTypeSelect.style.display = "none";
+        parkTypeSelect.style.display = "block";
     }
 
 }
@@ -141,6 +152,7 @@ function locationDropDownChange() {
 
         for (let park of parksFilter) {
             createNationalParkCard(park);
+          
         }
 
         /*const park = parksFilter[0];
