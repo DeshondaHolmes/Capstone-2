@@ -14,6 +14,7 @@ const mountainDetailRow = document.getElementById("mountainDetailRow");
 window.onload = () => {
 
     mountainDropDown.onclick = mountainDropDownClick;
+    mountainSelect.onchange = mountainSelectChange;
 
     for (let mountain of mountainsArray) {
         console.log(mountain);
@@ -25,7 +26,17 @@ window.onload = () => {
 };
 
 
+function mountainSelectChange (){
 
+
+    let  mountainImage = mountainSelected.value;
+
+    const mountainImages = mountainsArray.find(mountainImg =>mountainImg.img === mountainImage);
+     console.log(mountainImage);
+  
+}
+
+let mountainSelected = mountainDropDown.value;
 function mountainDropDownClick() {
 
 
@@ -42,6 +53,8 @@ function mountainDropDownClick() {
     }
 
 }
+
+
 
 
 function createMountainCard(mountain) {
@@ -95,14 +108,24 @@ function createMountainCard(mountain) {
     h5Name.appendChild(mountainDesc);
 
     let mountainElevation = document.createElement("li");
-    mountain
+    mountainElevation.className ="mountainElevation";
+    mountainElevation.innerHTML = "Elevation: " + mountain.elevation;
+    mountainDesc.appendChild(mountainElevation);
+
+    let mountainEffort = document.createElement("li");
+    mountainEffort.className = "mountainEffort";
+    mountainEffort.innerHTML = "Effort: " + mountain.effort;
+    mountainElevation.appendChild(mountainEffort);
 
 
 
 
+    let mountainImage = document.createElement("img");
+    mountainImage.className = "mountainImage";
+    mountainImage.src ="images/" + mountain.img;
+    mountainImage.alt = "mountain image";
+    mountainEffort.appendChild(mountainImage);
 
-
-
-
+    console.log(mountainImage);
 }
 
