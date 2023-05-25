@@ -54,7 +54,7 @@ body {
 
 
 .card{
-    background: linear-gradient(to right, #99ccff, rgb(176, 233, 176), white, rgb(189, 170, 135), rgb(202, 148, 202), orange);
+    background: linear-gradient(to right, #99ccff, rgb(176, 233, 176), white, rgb(189, 170, 135), rgb(202, 148, 202), rgb(13, 177, 62));
 
     display: flex;
     flex-direction: row;
@@ -72,14 +72,36 @@ body {
 }
 
 
-#parkDetailRow{
-    background-image: url("images/Garfield-StoryImage.jpg");
-
-}
-
-
-
-
 #parkTypeSelect{
     display:none;
 }
+
+#searchContent{
+    margin: bottom 5px;
+    margin-top: 15%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    font-size: xx-large;
+    font-weight: 400;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+
+
+
+#dropDoenSelects{
+    margin: bottom 5px;
+    margin-top: 15%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    font-size: xx-large;
+    font-weight: 400;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+
+
