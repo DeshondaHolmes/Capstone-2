@@ -197,7 +197,7 @@ function createNationalParkCard(park) {
     let divCol = document.createElement("div");
 
     //
-    divCol.className = "col-6 px-5 ";
+    divCol.className = "col-5 px-5 ";
     //
     parkDetailRow.appendChild(divCol);
 
