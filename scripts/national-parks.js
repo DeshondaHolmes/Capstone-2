@@ -211,7 +211,7 @@ function createNationalParkCard(park) {
     let divCol = document.createElement("div");
 
     //
-    divCol.className = "col-5 px-5 ";
+    divCol.className = "col-6 mt-4";
     //
     parkDetailRow.appendChild(divCol);
 
@@ -227,6 +227,12 @@ function createNationalParkCard(park) {
     divCol.appendChild(divCard);
 
 
+    let divHeader = document.createElement("div");
+    divHeader.className = "card-header";
+    divHeader.innerHTML =  park.LocationName;
+    divCard.appendChild(divHeader);
+
+
     //
     let divCardBody = document.createElement("div");
     //
@@ -234,22 +240,12 @@ function createNationalParkCard(park) {
     //
     divCard.appendChild(divCardBody);
 
-
-    //
-    let h5Name = document.createElement("h5");
-    //
-    h5Name.className = "card-title";
-    //
-    h5Name.innerHTML = park.LocationName;
-    //
-    divCardBody.appendChild(h5Name);
-
     //
     let unOrderedList = document.createElement("ul");
     //
     unOrderedList.className = "card-list";
     //
-    h5Name.appendChild(unOrderedList);
+    divCardBody.appendChild(unOrderedList);
 
 
     //

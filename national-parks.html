@@ -14,7 +14,7 @@
 
 
 
-<body>
+<body class="container-flex">
 
     <header>
         <!--start navigation-->
@@ -47,12 +47,10 @@
 
 
     <main>
-        <div class="container border mt-5">
+        <div class="container border mt-4">
             <h1 class="text-center">Discover a new park</h1>
 
-
-
-            <div id="searchContent" class="border">
+            <div id="searchContent">
                 <div class="form-check">
                     <input class="form-check-input" type="radio" name="radioButton" id="locationOption" checked>
                     <label class="form-check-label" for="locationOption">
@@ -77,7 +75,7 @@
 
                     <div class="col mt-4 ">
 
-                        <div class="mb">
+                        <div class="mb-3">
                             <h2>Find by location:</h2>
                             <select class="form-select" id="locationDropDown" aria-label="select">
                                 <option value="">Select one</option>
@@ -109,6 +107,11 @@
 
             </div>
 
+        </div>
+        <!--Search by  location select state/territory END -->
+        
+        <div class="container">
+
             <div id="parkDetailRow" class="row border">
                 <!-- <div class="col">
                     <div class="card">
@@ -124,10 +127,8 @@
                         </div>
                 </div>-->
             </div>
+
         </div>
-        <!--Search by  location select state/territory END -->
-
-
 
 
 

@@ -1,13 +1,16 @@
 nav {
     font-size: larger;
+  
 }
 
 body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-#parkTypeSelect{
-    display:none;
+
+#parkTypeSelect {
+    display: none;
 }
+
 #heroSection {
     display: flex;
     flex-wrap: wrap;
@@ -23,7 +26,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     margin-top: 9%;
-
+    
 
 }
 
@@ -55,42 +58,24 @@ body {
 }
 
 
-.card{
-    background: linear-gradient(to right, #99ccff, rgb(176, 233, 176), white, rgb(189, 170, 135), rgb(202, 148, 202), rgb(13, 177, 62));
-
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    align-items: end;
-    height: 92%;
-    width:80%;
-    margin-left: 5%;
 
 
-
-
-
-}
-
-
-#searchContent{
+#searchContent {
     margin: bottom 5px;
-    margin-top: 15%;
+    margin-top: 5%;
     display: flex;
-    flex-direction: row;
     flex-wrap: nowrap;
+    flex-direction: row;
     justify-content: space-evenly;
     font-size: x-large;
-    font-weight: 400;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
 }
 
 
 
-#dropDownSelects{
-    display:flex;
+#dropDownSelects {
+    display: flex;
     flex-wrap: nowrap;
     flex-direction: row;
     justify-content: center;
@@ -98,3 +83,25 @@ body {
 }
 
 
+#parkDetailRow {
+   
+    display: flex;
+    justify-content: space-evenly;
+    
+  
+  
+
+   
+
+}
+
+.card {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background: linear-gradient(to bottom right, #99ccff, rgb(200, 211, 200), rgb(7, 112, 131), rgb(189, 170, 135), rgb(41, 168, 79));
+    align-content: center;
+    justify-content: space-evenly;
+    font-size: large;
+    font-weight: 900;
+    flex-grow: 0;
+   
+}
