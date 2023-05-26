@@ -55,7 +55,7 @@ window.onload = () => {
     //when window finish loading "window load" in console window
     console.log("window load");
 
-    locationOption.onchange = onLocationOptionChange;
+    locationOption.onchange = onLocationOptionChange;//evokes function
     parkTypeOption.onchange = onParkTypeOptionChange;
 
 
@@ -88,6 +88,8 @@ window.onload = () => {
     
 };
 
+
+//locationhideorshow
 function onLocationOptionChange() {
     if (locationOption.checked) {
 
@@ -97,8 +99,8 @@ function onLocationOptionChange() {
         locationSelect.style.display = "block";
         
         parkTypeSelect.style.display = "none";
-        parkDetailRow.innerHTML = "";
-        locationDropDown.selectedIndex = 0;
+        parkDetailRow.innerHTML = "";//notshow values
+        locationDropDown.selectedIndex = 0; //base 0
       
     } else {
         //hide location related stuff.

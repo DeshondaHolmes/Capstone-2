@@ -1,7 +1,7 @@
 "use strict";
 
 
-
+//global variables 
 const mountainSelect = document.getElementById("mountainSelect");
 console.log(mountainSelect);
 
@@ -11,11 +11,16 @@ console.log(mountainDropDown);
 const mountainDetailRow = document.getElementById("mountainDetailRow");
 
 
+
+//arow function shorthand
 window.onload = () => {
 
-    mountainDropDown.onclick = mountainDropDownClick;
-    mountainSelect.onchange = mountainSelectChange;
+    mountainDropDown.onclick = mountainDropDownClick;//execute 
+    mountainSelect.onchange = mountainSelectChange; //excute 
 
+
+    //mountain of mountains
+    //for loop 
     for (let mountain of mountainsArray) {
         console.log(mountain);
         let newOption = new Option(mountain.name);
@@ -36,6 +41,8 @@ function mountainSelectChange (){
   
 }
 
+
+
 let mountainSelected = mountainDropDown.value;
 function mountainDropDownClick() {
 
@@ -45,7 +52,7 @@ function mountainDropDownClick() {
     const mountain = mountainsArray.find(mountain => mountain.name === mountainSelected);
     console.log(mountain);
 
-    mountainDetailRow.innerHTML = "";
+     mountainDetailRow.innerHTML = "";
 
     if (mountain) {
         
