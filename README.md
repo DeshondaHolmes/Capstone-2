@@ -22,4 +22,4 @@ Each page contains navigation links to the othe pages
 ![national parks page location](images/NationalParkLocation.png)
 ![national parks page park type](images/NationalParkparkType.png)
 ![mountains page](images/mountainspageDropDown.png)
-![mountains page](images/mountainspageDropDown.png)
+![mountains page](images/mountainspage.png)
