@@ -1,82 +1,69 @@
 "use strict";
 
 
-//define location dropdown is element id in national park html 
-const locationDropDown = document.getElementById("locationDropDown");
 
-//define park typedropdown is element id in national park html 
-const parkTypeDropDown = document.getElementById("parkTypeDropDown");
+/*All html element id */
 
-
-//radio button option location
+//define variable to hold html reference for radio button location
 const locationOption = document.getElementById("locationOption");
-//
-//radio button option location
+
+
+//define variable to hold html reference for radio button park type
 const parkTypeOption = document.getElementById("parkTypeOption");
 
 
+
+//define variable to hold html reference for location dropdown 
+const locationDropDown = document.getElementById("locationDropDown");
+
+
+//define variable to hold html reference for park type dropdown 
+const parkTypeDropDown = document.getElementById("parkTypeDropDown");
+
+
+
+
+//define variable to hold html reference for location selection row
+const locationSelect = document.getElementById("locationSelect");
+
+
+//define variable to hold html reference for park type selection row
 const parkTypeSelect = document.getElementById("parkTypeSelect");
 
 
-const locationSelect = document.getElementById("locationSelect");
 
-const dropDownSelects = document.getElementById("dropDownSelects");
-
-//define parkdetails row element id in national park html
+//define variable to hold html reference for park detail row 
 const parkDetailRow = document.getElementById("parkDetailRow");
 
-//define park name element id in national park html
-//const parkName = document.getElementById("parkName");
-
-//define park details element id in national park html
-//const parkDetails = document.getElementById("parkDetails");
-//define park  element id in national park html
-//const parkId = document.getElementById("parkId");
-
-//define park city element id in national park html
-//const parkCity = document.getElementById("parkCity");
-
-//define park state element id in national park html
-//const parkState = document.getElementById("parkState");
 
 
-//define park zip code element id in national park html
-//const parkZipCode = document.getElementById("parkZipCode");
+//after window finsih loading,following functions and loop will execute 
 
-//define park fax element id in national park html 
-//const parkFax = document.getElementById("parkFax");
-
-
-//Arrow function
 window.onload = () => {
-  
 
-    
-    //when window finish loading "window load" in console window
-    console.log("window load");
+    //execute function if radio location button change
+    locationOption.onchange = onLocationOptionChange;
 
-    locationOption.onchange = onLocationOptionChange;//evokes function
+    //execute function if radio park type button change
     parkTypeOption.onchange = onParkTypeOptionChange;
 
 
-
-    //when dropdown selected display states/territory
+    //execute function if location dropdown change
     locationDropDown.onchange = locationDropDownChange;
-    console.log(locationDropDown);
+
+   //execute function if park type dropdown change
     parkTypeDropDown.onchange = parkTypeDropDownChange;
 
 
-    //add child nodes , create new state options to location dropdown
+    //f
     for (let state of locationsArray) {
 
         let newOption = new Option(state);
 
         locationDropDown.appendChild(newOption);
-        console.log(state);
+       
      
     }
-
-
 
     for (let type of parkTypesArray) {
 
@@ -95,7 +82,7 @@ function onLocationOptionChange() {
 
       
         //show location  related stuff
-        console.log("Hello");
+       
         locationSelect.style.display = "block";
         
         parkTypeSelect.style.display = "none";
@@ -112,7 +99,7 @@ function onLocationOptionChange() {
 
 function onParkTypeOptionChange() {
 
-    console.log("parkType");
+
     if (parkTypeOption.checked) {
         
         parkTypeSelect.style.display = "block";
@@ -122,7 +109,7 @@ function onParkTypeOptionChange() {
         parkTypeDropDown.selectedIndex = 0;
 
     } else {
-        parkTypeSelect.style.display = "block";
+        parkTypeSelect.style.display = "none";
     }
 
 }
@@ -202,11 +189,6 @@ parkFax.innerHTML = park.Fax;}*/
 
 function createNationalParkCard(park) {
 
-    /*let divClass = document.createElement("div");
-    divClass.className = "row";
-    parkDetailRow.appendChild(divClass);*/
-
-
     // 
     let divCol = document.createElement("div");
 
@@ -228,8 +210,11 @@ function createNationalParkCard(park) {
 
 
     let divHeader = document.createElement("div");
+
     divHeader.className = "card-header";
+
     divHeader.innerHTML =  park.LocationName;
+
     divCard.appendChild(divHeader);
 
 
@@ -321,6 +306,7 @@ function createNationalParkCard(park) {
     listFax.appendChild(listLatitude);
 
 
+
     //
     let listLongitude = document.createElement("li");
     //
@@ -351,10 +337,6 @@ function createNationalParkCard(park) {
 
     //
     listVisit.appendChild(listLocation);
-
-
-
-
 
 
 
