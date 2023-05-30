@@ -6,7 +6,7 @@
 
 //define variable to hold html reference for radio button location
 const locationOption = document.getElementById("locationOption");
-
+const viewAllOption = document.getElementById("viewAllOption");
 
 //define variable to hold html reference for radio button park type
 const parkTypeOption = document.getElementById("parkTypeOption");
@@ -46,6 +46,9 @@ window.onload = () => {
 
     //execute function if radio park type button change
     parkTypeOption.onchange = onParkTypeOptionChange;
+ parkTypeOption.onchange = onParkTypeOptionChange;
+
+
 
 
     //execute function if location dropdown change

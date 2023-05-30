@@ -31,14 +31,14 @@ window.onload = () => {
 };
 
 
-function mountainSelectChange (){
+function mountainSelectChange() {
 
 
-    let  mountainImage = mountainSelected.value;
+    let mountainImage = mountainSelected.value;
 
-    const mountainImages = mountainsArray.find(mountainImg =>mountainImg.img === mountainImage);
-     console.log(mountainImage);
-  
+    const mountainImages = mountainsArray.find(mountainImg => mountainImg.img === mountainImage);
+    console.log(mountainImage);
+
 }
 
 
@@ -52,10 +52,9 @@ function mountainDropDownClick() {
     const mountain = mountainsArray.find(mountain => mountain.name === mountainSelected);
     console.log(mountain);
 
-     mountainDetailRow.innerHTML = "";
+    mountainDetailRow.innerHTML = "";
 
     if (mountain) {
-        
         createMountainCard(mountain);
     }
 
@@ -109,13 +108,13 @@ function createMountainCard(mountain) {
     divCardBody.appendChild(h5Name);
 
 
-    let mountainDesc =document.createElement("li");
+    let mountainDesc = document.createElement("li");
     mountainDesc.className = "mountainDesc";
     mountainDesc.innerHTML = "Description: " + mountain.desc;
     h5Name.appendChild(mountainDesc);
 
     let mountainElevation = document.createElement("li");
-    mountainElevation.className ="mountainElevation";
+    mountainElevation.className = "mountainElevation";
     mountainElevation.innerHTML = "Elevation: " + mountain.elevation;
     mountainDesc.appendChild(mountainElevation);
 
@@ -129,10 +128,29 @@ function createMountainCard(mountain) {
 
     let mountainImage = document.createElement("img");
     mountainImage.className = "mountainImage";
-    mountainImage.src ="images/" + mountain.img;
+    mountainImage.src = "images/" + mountain.img;
     mountainImage.alt = "mountain image";
     mountainEffort.appendChild(mountainImage);
 
     console.log(mountainImage);
+}
+
+
+
+
+// Fetch the sunset/sunrise times for a specific mountain 
+getSunsetForMountain(mountain.coords.lat, mountain.coords.lng).then(data => {
+    console.log(data.results)
+});
+   
+
+
+
+// function that can "fetch" the sunrise/sunset times
+async function getSunsetForMountain(lat, lng){
+    let response = await fetch(
+    `https://api.sunrise-sunset.org/json?lat=${lat}&lng=${lng}&date=today`);
+    let data = await response.json();
+    return data;
 }
 
