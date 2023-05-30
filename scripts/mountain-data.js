@@ -140,6 +140,11 @@ function createMountainCard(mountain) {
 
 // Fetch the sunset/sunrise times for a specific mountain 
 getSunsetForMountain(mountain.coords.lat, mountain.coords.lng).then(data => {
+    const sunrise = data.results.sunrise;
+
+
+    const sunsetTime = data.results.sunset;
+
     console.log(data.results)
 });
    
