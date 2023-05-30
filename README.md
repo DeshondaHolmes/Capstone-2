@@ -17,6 +17,24 @@ Each page contains navigation links to the othe pages
 
 
 
+One piece of interesting code 
+
+I was able to get my radio button border to show , I used different colors 
+
+.form-check-input{
+  
+    border-right-color: rgb(70, 3, 30);
+    border-bottom-color: blue;
+    border-left-color: rgb(16, 137, 105);
+    border-top-color: purple;
+    border-style:dashed;
+    border-width: 5px;
+    font-size: larger;
+    width: 30px;
+    height: 30px;
+ 
+}
+
 
 ![Home page](images/HomepageCapstone.png)
 ![national parks page location](images/NationalParkLocation.png)
