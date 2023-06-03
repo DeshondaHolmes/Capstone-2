@@ -8,6 +8,7 @@ const locationOption = document.getElementById("locationOption");
 //define variable to hold html reference for radio button park type
 const parkTypeOption = document.getElementById("parkTypeOption");
 
+
 //define variable to hold html reference for location dropdown 
 const locationDropDown = document.getElementById("locationDropDown");
 
@@ -141,7 +142,7 @@ function locationDropDownChange() {
     if (parksFilter.length > 0) {
 
         //loop through array 
-        for (let park of parksFilter) {
+       for (let park of parksFilter) {
 
             //function to execute , passing park value to create cards for each
             createNationalParkCard(park);
@@ -155,6 +156,7 @@ function locationDropDownChange() {
 
 
 //park type dropdown function on change
+
 function parkTypeDropDownChange() {
 
     //selected type is defined as user selected value
@@ -198,7 +200,6 @@ function createNationalParkCard(park) {
     parkDetailRow.appendChild(divCol);
 
     
-
 
     //Create div element for card
     let divCard = document.createElement("div");
