@@ -1,4 +1,4 @@
-# Capstone-2
+# Capstone-2/Enjoy the outdoors 
 
 A website that helps a user find things to do to enjoy the outdoors
 
